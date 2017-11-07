@@ -1,0 +1,21 @@
+{
+  "name": "spotify-graphql-client-react-native-expo",
+  "version": "0.0.1",
+  "description": "simple graphql client for spotify",
+  "author": "Robert Hostlowsky",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "dependencies": {
+    "expo": "^22.0.0",
+    "react": "16.0.0-beta.5",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-22.0.2.tar.gz"
+  },
+  "keywords": [
+    "apollo",
+    "graphql",
+    "spotify",
+    "expo",
+    "react-native"
+  ],
+  "license": "Apache-2.0"
+}
