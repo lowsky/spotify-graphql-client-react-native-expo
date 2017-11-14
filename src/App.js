@@ -12,11 +12,13 @@ export default class App extends React.Component {
     }
 }
 
-const Query = () => <TextInput placeholder='search for artist'/>;
+const Query = () => <TextInput placeholder="search for artist" />;
 
-const Artists = () => (<ScrollView style={styles.artists}>
+const Artists = () => (
+    <ScrollView style={styles.artists}>
         <Text>Artists...</Text>
-    </ScrollView>);
+    </ScrollView>
+);
 
 const styles = StyleSheet.create({
     container: {
@@ -25,7 +27,6 @@ const styles = StyleSheet.create({
         paddingTop: 20,
     },
     artists: {
-        backgroundColor: 'white'
-    }
+        backgroundColor: 'white',
+    },
 });
-
