@@ -7,7 +7,7 @@ import { graphql } from 'react-apollo';
 
 let artistsList = [
     {
-        name: 'Marilyn Manson',
+        name: 'Xul Zolar',
         id: 1,
     },
 ];
@@ -15,7 +15,7 @@ let artistsList = [
 export default class App extends React.Component {
     state = {
         artists: artistsList,
-        artistsByName: 'Marilyn Manson',
+        artistsByName: 'Xul Zolar',
     };
 
     render() {
@@ -82,6 +82,8 @@ const ArtistsQuery = gql`
             image
             id
             albums {
+                id
+                image
                 name
             }
         }
