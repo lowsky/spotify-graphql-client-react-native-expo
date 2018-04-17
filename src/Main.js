@@ -5,16 +5,9 @@ import { FlatList, ActivityIndicator, Image, StyleSheet, Text, View, ScrollView 
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
-let artistsList = [
-    {
-        name: 'Xul Zolar',
-        id: 1,
-    },
-];
-
 export default class App extends React.Component {
     state = {
-        artists: artistsList,
+        artists: [],
         artistsByName: 'Xul Zolar',
     };
 
@@ -31,7 +24,6 @@ export default class App extends React.Component {
     updateQueryArtist = (artistsName = '') => {
         this.setState({
             ...this.state,
-            artists: artistsList,
             artistsByName: artistsName,
         });
     };
@@ -53,12 +45,11 @@ const Query = ({ onChangeText, value = '' }) => (
 const ArtistsBase = ({ data = {} }) => {
     let { artists = [], loading, error } = data;
 
-    //loading = true;
     if (loading) {
         return <ActivityIndicator />;
     }
     if (error) {
-        return <Text>{'' + error}</Text>;
+        return <Text>{'Error: ' + error}</Text>;
     }
     return (
         <ScrollView>
