@@ -99,14 +99,15 @@ let config = {
 
 const Artists = graphql(ArtistsQuery, config)(ArtistsBase);
 
-const Artist = ({ name, image, albums }) => (
-    <View>
-        <Text>{name}</Text>
-        <Text>
-            Albums:
-            {albums && albums.length}
-        </Text>
-        {!!image && <Image source={{ uri: image }} style={styles.artistImage} />}
+const Artist = ({ name, id, image, albums }) => (
+      <View style={{alignContent: 'flex-start', flexDirection: 'row'}}>
+        <View style={{flex: 0}}>
+          {!!image && <Image source={{uri: image}} style={styles.artistImage}/>}
+        </View>
+        <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}>
+          <Text>{name}</Text>
+          {<Text>Albums: &nbsp;{albums && albums.length}</Text>}
+        </View>
     </View>
 );
 
