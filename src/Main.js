@@ -35,7 +35,7 @@ const Query = ({ onChangeText, value = '' }) => (
         clearIcon={{ color: '#86939e', name: 'close' }}
         icon={{ color: '#86939e', name: 'search' }}
         round
-        lightTheme
+        darkTheme
         onChangeText={onChangeText}
         onClearText={onChangeText}
         placeholder="Type artists name ..."
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#ecf0f1',
         alignItems: 'stretch',
-        paddingTop: 20,
+        paddingTop: 50,
     },
     query: {
         margin: 20,
