@@ -21,20 +21,20 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Query onChangeText={this.updateQueryArtist.bind(this)} value={this.state.artistsByName} />
+                <Query onChangeText={this.updateQueryArtist} value={this.state.artistsByName} />
                 {!!this.state.artistsByName && <Artists byName={this.state.artistsByName} />}
                 {!this.state.artistsByName && <Text>Just search for something</Text>}
             </View>
         );
     }
 
-    updateQueryArtist(artistsName = '') {
+    updateQueryArtist = (artistsName = '') => {
         this.setState({
             ...this.state,
             artists: artistsList,
             artistsByName: artistsName,
         });
-    }
+    };
 }
 
 const Query = ({ onChangeText, value = '' }) => (
