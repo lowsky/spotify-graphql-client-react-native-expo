@@ -93,14 +93,35 @@ let config = {
 const Artists = graphql(ArtistsQuery, config)(ArtistsBase);
 
 const Artist = ({ name, id, image, albums }) => (
+    <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}>
+      { false &&
       <View style={{alignContent: 'flex-start', flexDirection: 'row'}}>
         <View style={{flex: 0}}>
           {!!image && <Image source={{uri: image}} style={styles.artistImage}/>}
         </View>
         <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}>
+          <Text>Artist:</Text>
           <Text>{name}</Text>
           {<Text>Albums: &nbsp;{albums && albums.length}</Text>}
         </View>
+      </View>
+      }
+      {
+        albums.map(a => (
+            <View key={a.id} style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+              <View style={{flex: 0}}>
+                {!!a.image && <Image source={{uri: a.image}} style={styles.artistImage}/>}
+              </View>
+
+              <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}>
+                <Text>{name}</Text>
+                {<Text>&nbsp;</Text>}
+                {<Text>{a.name}</Text>}
+              </View>
+            </View>
+          )
+        )
+      }
     </View>
 );
 
