@@ -1,6 +1,6 @@
 import { SearchBar } from 'react-native-elements';
 import React from 'react';
-import { ActivityIndicator, Image, StyleSheet, Text, View, ScrollView } from 'react-native';
+import { FlatList, ActivityIndicator, Image, StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
@@ -62,15 +62,14 @@ const ArtistsBase = ({ data = {} }) => {
     }
     return (
         <ScrollView>
-            <View
-                style={
-                    {
-                        //... styles.artists,
-                        //flexDirection: 'row',
-                        //flexWrap: 'wrap'
-                    }
-                }>
-                {artists.filter(artist => artist.image).map(artist => <Artist key={artist.id} {...artist} />)}
+            <View>
+                <FlatList
+                    data={artists}
+                    keyExtractor={artist => artist.id}
+                    renderItem={({ item }) => (
+                        <Artist key={item.id} {...item} />
+                    )}
+                />
             </View>
         </ScrollView>
     );
