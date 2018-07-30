@@ -12,7 +12,7 @@ export default class Main extends React.Component {
     };
 
     render() {
-        const { artistsByName } = this.status;
+        const { artistsByName = '' } = this.state;
 
         return (
             <View style={styles.container}>

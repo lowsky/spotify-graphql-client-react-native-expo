@@ -15,18 +15,18 @@ export const Artist = ({ name, image, albums }) => (
                 </View>
             </View>
         )}
-        {albums.map(album => <AlbumInfo key={album.id} album={album} />)}
+        {albums.map(album => <AlbumInfo key={album.id} album={album} artistName={name} />)}
     </View>
 );
 
-const AlbumInfo = ({ album }) => (
+const AlbumInfo = ({ album = {}, artistName }) => (
     <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
         <View style={{ flex: 0 }}>
             {!!album.image && <Image source={{ uri: album.image }} style={styles.artistImage} />}
         </View>
 
         <View style={{ flex: 1, flexDirection: 'column', alignItems: 'flex-start' }}>
-            <Text>{name}</Text>
+            <Text>{artistName}</Text>
             <Text>&nbsp;</Text>
             <Text>{album.name}</Text>
         </View>
