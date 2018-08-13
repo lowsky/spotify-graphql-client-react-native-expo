@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "expo": "26.0.0",
-    "react": "16.3.2",
+    "react": "16.4.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
   },
   "keywords": ["apollo", "graphql", "spotify", "expo", "react-native"],
