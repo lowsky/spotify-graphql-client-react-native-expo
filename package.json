@@ -6,7 +6,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
-    "expo": "54.0.25",
+    "expo": "54.0.27",
     "react": "19.2.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
   },
